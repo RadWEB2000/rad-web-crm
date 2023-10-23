@@ -1,0 +1,60 @@
+@import "../../../../../styles/Variables.scss";
+
+.expand,
+.regural {
+	margin-top: 0.45rem;
+	height: 4.15rem;
+	&,
+	& > a {
+		@include flex(center, flex-start, row nowrap);
+		width: 100%;
+	}
+	& > a {
+		background-color: hsla(0, 100%, 100%, 0);
+		color: $verdigris;
+		border-radius: 0.5rem;
+		column-gap: 1rem;
+		padding: 0 0.35rem;
+		position: relative;
+		transition: 0.35s ease-in-out background-color, 0.35s ease-in-out color;
+		& > span {
+			@include flex(center, center);
+			@include size(4.15rem, 4.15rem);
+			color: $verdigris;
+			font-size: 2rem;
+			transition: 0.35s ease-in-out color;
+		}
+		& > p {
+			@include font(2rem, 500, 1, null, -0.15px, start, null, null);
+		}
+
+		&::after {
+			@include size(1.5px, 0%);
+			background: $turqoise;
+			border-radius: 1.2rem;
+			bottom: 0;
+			left: 0;
+			transition: 0.35s ease-in-out width;
+		}
+		&:focus-within,
+		&:hover {
+			background-color: hsla(0, 100%, 100%, 0.05);
+			&::after {
+				width: 100%;
+			}
+			&,
+			& > span {
+				color: $turqoise;
+			}
+		}
+	}
+}
+
+.expand {
+	& > button {
+		@include flex(center, center);
+		@include size(4.15rem, 4.15rem);
+		color: $verdigris;
+		font-size: 3rem;
+	}
+}

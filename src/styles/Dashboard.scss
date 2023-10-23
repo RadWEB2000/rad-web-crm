@@ -1,0 +1,19 @@
+@import "./Variables.scss";
+
+body {
+	// align-content: start;
+	// align-self: start;
+	// justify-items: start;
+	align-items: start;
+	display: grid;
+	grid-template-columns: repeat(24, 1fr);
+}
+
+.box {
+	@include flex(flex-start, flex-start, column);
+	grid-column: 4/-1;
+	& > * {
+		width: 100%;
+	}
+	// grid-row: 2;
+}

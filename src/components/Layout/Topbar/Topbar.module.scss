@@ -1,0 +1,26 @@
+@import "../../../styles/Variables.scss";
+
+.wrapper {
+	background: $rasin-quinary;
+	grid-column: 4/-1;
+	height: 5rem;
+	position: sticky;
+	top: 0;
+	display: grid;
+	grid-template-columns: repeat(21, 1fr);
+
+	& > .search {
+		// background: blue;
+		grid-column: 1/18;
+	}
+
+	& > .account {
+		// background: orangered;
+		grid-column: 18/21;
+	}
+
+	& > .button {
+		// background: silver;
+		grid-column: 21/-1;
+	}
+}

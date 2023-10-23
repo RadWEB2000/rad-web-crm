@@ -1,0 +1,28 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	& > ul {
+		@include flex(center, space-evenly, row nowrap);
+		& > li {
+			@include size(4.15rem, 4.15rem);
+			&,
+			& > a {
+				@include flex(center, center);
+			}
+			& > a {
+				@include size(100%, 100%);
+				border: 2px solid $slate;
+				border-radius: 1.15rem;
+				color: $slate;
+				font-size: 1.85rem;
+				transition: 0.15s ease-in-out all;
+				&:focus-within,
+				&:hover {
+					color: $ivory;
+					filter: brightness(115%);
+					transition: 0.15s ease-in-out all;
+				}
+			}
+		}
+	}
+}
