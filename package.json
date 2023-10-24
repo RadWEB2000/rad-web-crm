@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@googleapis/searchconsole": "^1.0.3",
+    "apexcharts": "^3.44.0",
     "date-fns": "^2.30.0",
     "framer-motion": "^10.16.4",
     "googleapis": "^128.0.0",
@@ -17,6 +18,7 @@
     "nodemailer": "^6.9.7",
     "prisma": "^5.4.2",
     "react": "^18",
+    "react-apexcharts": "^1.4.1",
     "react-dom": "^18",
     "react-hook-form": "^7.47.0",
     "react-icons": "^4.11.0",

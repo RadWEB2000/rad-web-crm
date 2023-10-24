@@ -38,6 +38,12 @@
 			"views/*": ["./src/components/Views/*"]
 		}
 	},
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+	"include": [
+		"next-env.d.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		".next/types/**/*.ts",
+		"src/ts/**/*.d.ts"
+	],
 	"exclude": ["node_modules"]
 }
