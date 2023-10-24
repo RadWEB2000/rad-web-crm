@@ -1,50 +1,35 @@
 "use client";
-import Chart from "react-apexcharts";
-
+import { Chart, LinearScale } from "chart.js";
+import { Line } from "react-chartjs-2";
 export default function GoogleSearchConsoleChart() {
 	const data = {
-		name: "Desktops",
-		data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
+		labels: ["2023-10-20", "2023-10-21", "2023-10-22"], // daty
+		datasets: [
+			{
+				label: "Kliknięcia",
+				data: [1, 1, 2], // liczba kliknięć
+				borderColor: ["rgba(255, 206, 86, 0.2)"],
+				backgroundColor: ["rgba(255, 206, 86, 0.2)"],
+				pointBackgroundColor: "rgba(255, 206, 86, 0.2)",
+				pointBorderColor: "rgba(255, 206, 86, 0.2)",
+			},
+		],
 	};
 
 	const options = {
-		chart: {
-			height: 350,
-			type: "line",
-			zoom: {
-				enabled: false,
+		plugins: {
+			title: {
+				display: true,
+				text: "Wykres Kliknięć",
 			},
 		},
-		dataLabels: {
-			enabled: false,
-		},
-		stroke: {
-			curve: "straight",
-		},
-		title: {
-			text: "Product Trends by Month",
-			align: "left",
-		},
-		grid: {
-			row: {
-				colors: ["#f3f3f3", "transparent"], // takes an array which will be repeated on columns
-				opacity: 0.5,
+		scales: {
+			y: {
+				type: "linear", // upewnij się, że używasz właściwej skali
+				beginAtZero: true,
 			},
-		},
-		xaxis: {
-			categories: [
-				"Jan",
-				"Feb",
-				"Mar",
-				"Apr",
-				"May",
-				"Jun",
-				"Jul",
-				"Aug",
-				"Sep",
-			],
 		},
 	};
 
-	return <Chart options={options} series={data} type="line" height={350} />;
+	return <Line data={data} options={options} />;
 }

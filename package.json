@@ -10,7 +10,10 @@
   },
   "dependencies": {
     "@googleapis/searchconsole": "^1.0.3",
+    "@types/chart.js": "^2.9.39",
+    "@types/react-chartjs-2": "^2.5.7",
     "apexcharts": "^3.44.0",
+    "chart.js": "^4.4.0",
     "date-fns": "^2.30.0",
     "framer-motion": "^10.16.4",
     "googleapis": "^128.0.0",
@@ -19,6 +22,7 @@
     "prisma": "^5.4.2",
     "react": "^18",
     "react-apexcharts": "^1.4.1",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18",
     "react-hook-form": "^7.47.0",
     "react-icons": "^4.11.0",
