@@ -1,7 +1,15 @@
 "use client";
 import { Chart, LinearScale } from "chart.js";
 import { Line } from "react-chartjs-2";
-export default function GoogleSearchConsoleChart() {
+import { iGoogleSearchConsoleResponseCharts } from "ts/interface";
+
+type tGoogleSearchConsoleChart = {
+	chart: iGoogleSearchConsoleResponseCharts[];
+};
+
+export default function GoogleSearchConsoleChart(
+	props: tGoogleSearchConsoleChart
+) {
 	const data = {
 		labels: ["2023-10-20", "2023-10-21", "2023-10-22"], // daty
 		datasets: [
@@ -25,7 +33,7 @@ export default function GoogleSearchConsoleChart() {
 		},
 		scales: {
 			y: {
-				type: "linear", // upewnij się, że używasz właściwej skali
+				type: "time", // upewnij się, że używasz właściwej skali
 				beginAtZero: true,
 			},
 		},

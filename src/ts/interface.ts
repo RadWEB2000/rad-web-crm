@@ -61,3 +61,11 @@ export interface iGoogleSearchConsoleResponseData {
 		responseURL: string;
 	};
 }
+
+export interface iGoogleSearchConsoleResponseCharts {
+	keys: Date[];
+	clicks: number;
+	impressions: number;
+	ctr: number;
+	position: number;
+}
