@@ -1,4 +1,4 @@
-@import "../../../styles/Variables.scss";
+@import '../../../styles/Variables.scss';
 
 .wrapper {
 	@include flex(flex-start, space-between, column, 1rem, null, true);
@@ -6,7 +6,7 @@
 	background-color: $rasin-primary;
 	box-shadow: 0 0.5rem 0.2rem hsla(0, 100%, 0%, 0.75);
 	// background-color: red;
-	grid-column: 1/4;
+	grid-column: 1/5;
 	padding: 2.5rem 1.1rem;
 	position: sticky;
 	top: 0;

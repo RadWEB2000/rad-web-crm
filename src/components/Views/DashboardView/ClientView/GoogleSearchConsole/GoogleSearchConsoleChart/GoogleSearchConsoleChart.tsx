@@ -1,15 +1,16 @@
-"use client";
-import { iGoogleSearchConsoleResponseCharts } from "ts/interface";
+'use client';
+import { iGoogleSearchConsoleResponseCharts } from 'ts/interface';
 import {
 	LineChart,
 	Line,
 	XAxis,
 	CartesianGrid,
+	ResponsiveContainer,
 	YAxis,
 	Tooltip,
-} from "recharts";
-import { useState } from "react";
-import styles from "views/DashboardView/ClientView/GoogleSearchConsole/GoogleSearchConsoleChart/GoogleSearchConsoleChart.module.scss";
+} from 'recharts';
+import { useState } from 'react';
+import styles from 'views/DashboardView/ClientView/GoogleSearchConsole/GoogleSearchConsoleChart/GoogleSearchConsoleChart.module.scss';
 
 type tGoogleSearchConsoleChart = {
 	chart: iGoogleSearchConsoleResponseCharts[];
@@ -19,7 +20,7 @@ type tButton = {
 	action: any;
 	isActive: boolean;
 	name: string;
-	theme: "clicks" | "views" | "ctr" | "position";
+	theme: 'clicks' | 'views' | 'ctr' | 'position';
 };
 
 function Button(props: tButton) {
@@ -94,48 +95,65 @@ export default function GoogleSearchConsoleChart(
 				/>
 			</div>
 			<div className={styles.chart_box}>
-				<LineChart className={styles.chart} data={data}>
-					{isClicks && (
-						<Line
-							type="monotone"
-							name="Kliknięcia"
-							dataKey="clicks"
-							stroke="hsl(194, 89%, 52%)"
-							strokeWidth={3}
+				<ResponsiveContainer
+					width={750}
+					height={450}
+				>
+					<LineChart
+						className={styles.chart}
+						data={data}
+					>
+						{isClicks && (
+							<Line
+								type="monotone"
+								name="Kliknięcia"
+								dataKey="clicks"
+								stroke="hsl(194, 89%, 52%)"
+								strokeWidth={3}
+							/>
+						)}
+						{isViews && (
+							<Line
+								type="monotone"
+								name="Wyświetlenia"
+								dataKey="views"
+								stroke="hsl(307, 100%, 50%)"
+								strokeWidth={3}
+							/>
+						)}
+						{isCtr && (
+							<Line
+								type="monotone"
+								name="CTR"
+								dataKey="ctr"
+								stroke="hsl(135, 78%, 49%)"
+								strokeWidth={3}
+							/>
+						)}
+						{isPosition && (
+							<Line
+								type="monotone"
+								name="Pozycja"
+								dataKey="position"
+								stroke="hsl(66, 100%, 55%)"
+								strokeWidth={3}
+							/>
+						)}
+						<CartesianGrid stroke="hsla(0, 0%, 64%,.5)" />
+						<XAxis dataKey="time" />
+						<YAxis />
+						<Tooltip
+							wrapperStyle={{
+								background: 'red',
+							}}
+							contentStyle={{
+								backgroundColor: '#292d3e',
+								boxShadow: '0 0 1rem hsla(0, 100%, 0%, 0.5)',
+								border: 'unset',
+							}}
 						/>
-					)}
-					{isViews && (
-						<Line
-							type="monotone"
-							name="Wyświetlenia"
-							dataKey="views"
-							stroke="hsl(307, 100%, 50%)"
-							strokeWidth={3}
-						/>
-					)}
-					{isCtr && (
-						<Line
-							type="monotone"
-							name="CTR"
-							dataKey="ctr"
-							stroke="hsl(135, 78%, 49%)"
-							strokeWidth={3}
-						/>
-					)}
-					{isPosition && (
-						<Line
-							type="monotone"
-							name="Pozycja"
-							dataKey="position"
-							stroke="hsl(66, 100%, 55%)"
-							strokeWidth={3}
-						/>
-					)}
-					<CartesianGrid stroke="hsla(0, 0%, 64%,.5)" />
-					<XAxis dataKey="time" />
-					<YAxis />
-					<Tooltip />
-				</LineChart>
+					</LineChart>
+				</ResponsiveContainer>
 			</div>
 		</div>
 	);

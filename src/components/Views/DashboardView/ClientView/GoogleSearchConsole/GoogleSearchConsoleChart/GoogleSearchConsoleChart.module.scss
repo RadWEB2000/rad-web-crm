@@ -1,4 +1,4 @@
-@import "../../../../../../styles/Variables.scss";
+@import '../../../../../../styles/Variables.scss';
 
 $clicks: hsl(194, 89%, 52%);
 $views: hsl(307, 100%, 50%);
@@ -6,12 +6,12 @@ $ctr: hsl(135, 78%, 49%);
 $position: hsl(66, 100%, 55%);
 
 @mixin themeButton($theme, $color) {
-	&[data-theme="#{$theme}"] {
+	&[data-theme='#{$theme}'] {
 		border: 2px solid $color;
 		color: $color;
 		transition: 0.15s ease-in-out all;
 
-		&[data-active="true"] {
+		&[data-active='true'] {
 			background-color: $color;
 			color: $rasin-primary;
 			transition: 0.15s ease-in-out all;
@@ -20,30 +20,23 @@ $position: hsl(66, 100%, 55%);
 }
 
 .button {
-	@include font(2rem, 600, 1, null, null, center, null, null);
+	@include font(1.7rem, 600, 1, null, null, center, null, null);
 	@include flex(center, center);
-	padding: 1.5rem 2rem;
+	padding: 1.25rem 1.6rem;
 	border-radius: 1.15rem;
 
-	@include themeButton("clicks", $clicks);
-	@include themeButton("views", $views);
-	@include themeButton("ctr", $ctr);
-	@include themeButton("position", $position);
+	@include themeButton('clicks', $clicks);
+	@include themeButton('views', $views);
+	@include themeButton('ctr', $ctr);
+	@include themeButton('position', $position);
 }
 
 .wrapper {
-	background: darkgreen;
 	padding: 1rem 1.1rem;
+	width: 55rem;
 }
 
 .buttons {
 	@include flex(center, flex-start, row, 1rem, null, true);
-}
-
-.chart_box {
-	margin-top: 2rem;
-	background: black;
-	& > .chart {
-		@include size(45rem, 65rem);
-	}
+	margin-bottom: 1.2rem;
 }

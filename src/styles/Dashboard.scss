@@ -1,9 +1,9 @@
-@import "./Variables.scss";
+@import './Variables.scss';
 
 body {
-	// align-content: start;
-	// align-self: start;
-	// justify-items: start;
+	align-content: start;
+	align-self: start;
+	justify-items: start;
 	align-items: start;
 	display: grid;
 	grid-template-columns: repeat(24, 1fr);
@@ -11,9 +11,9 @@ body {
 
 .box {
 	@include flex(flex-start, flex-start, column);
-	grid-column: 4/-1;
+	grid-column: 5/-1;
+	&,
 	& > * {
 		width: 100%;
 	}
-	// grid-row: 2;
 }
