@@ -1,43 +1,142 @@
 "use client";
-import { Chart, LinearScale } from "chart.js";
-import { Line } from "react-chartjs-2";
 import { iGoogleSearchConsoleResponseCharts } from "ts/interface";
+import {
+	LineChart,
+	Line,
+	XAxis,
+	CartesianGrid,
+	YAxis,
+	Tooltip,
+} from "recharts";
+import { useState } from "react";
+import styles from "views/DashboardView/ClientView/GoogleSearchConsole/GoogleSearchConsoleChart/GoogleSearchConsoleChart.module.scss";
 
 type tGoogleSearchConsoleChart = {
 	chart: iGoogleSearchConsoleResponseCharts[];
 };
 
+type tButton = {
+	action: any;
+	isActive: boolean;
+	name: string;
+	theme: "clicks" | "views" | "ctr" | "position";
+};
+
+function Button(props: tButton) {
+	const { action, isActive, name, theme } = props;
+	return (
+		<button
+			className={styles.button}
+			data-active={isActive}
+			data-theme={theme}
+			onClick={action}
+		>
+			{name}
+		</button>
+	);
+}
+
 export default function GoogleSearchConsoleChart(
 	props: tGoogleSearchConsoleChart
 ) {
-	const data = {
-		labels: ["2023-10-20", "2023-10-21", "2023-10-22"], // daty
-		datasets: [
-			{
-				label: "Kliknięcia",
-				data: [1, 1, 2], // liczba kliknięć
-				borderColor: ["rgba(255, 206, 86, 0.2)"],
-				backgroundColor: ["rgba(255, 206, 86, 0.2)"],
-				pointBackgroundColor: "rgba(255, 206, 86, 0.2)",
-				pointBorderColor: "rgba(255, 206, 86, 0.2)",
-			},
-		],
-	};
+	const { chart } = props;
+	const data = chart.map(({ clicks, ctr, impressions, keys, position }) => {
+		const day =
+			new Date(keys[0]).getDate() < 10
+				? `0${new Date(keys[0]).getDate()}`
+				: new Date(keys[0]).getDate();
+		const month =
+			new Date(keys[0]).getMonth() + 1 < 10
+				? `0${new Date(keys[0]).getMonth() + 1}`
+				: new Date(keys[0]).getMonth() + 1;
+		const year = new Date(keys[0]).getFullYear();
 
-	const options = {
-		plugins: {
-			title: {
-				display: true,
-				text: "Wykres Kliknięć",
-			},
-		},
-		scales: {
-			y: {
-				type: "time", // upewnij się, że używasz właściwej skali
-				beginAtZero: true,
-			},
-		},
-	};
+		return {
+			time: `${day}-${month}-${year}`,
+			ctr: Math.round(ctr * 1000) / 1000,
+			clicks,
+			views: impressions,
+			position: Math.round(position * 100) / 100,
+		};
+	});
 
-	return <Line data={data} options={options} />;
+	const [isClicks, setClicks] = useState(false);
+	const [isViews, setViews] = useState(true);
+	const [isCtr, setCtr] = useState(false);
+	const [isPosition, setPosition] = useState(false);
+
+	return (
+		<div className={styles.wrapper}>
+			<div className={styles.buttons}>
+				<Button
+					action={() => setClicks(!isClicks)}
+					isActive={isClicks}
+					name="Kliknięcia"
+					theme="clicks"
+				/>
+				<Button
+					action={() => setViews(!isViews)}
+					isActive={isViews}
+					name="Wyświetlenia"
+					theme="views"
+				/>
+				<Button
+					action={() => setCtr(!isCtr)}
+					isActive={isCtr}
+					name="CTR"
+					theme="ctr"
+				/>
+				<Button
+					action={() => setPosition(!isPosition)}
+					isActive={isPosition}
+					name="Pozycja"
+					theme="position"
+				/>
+			</div>
+			<div className={styles.chart_box}>
+				<LineChart className={styles.chart} data={data}>
+					{isClicks && (
+						<Line
+							type="monotone"
+							name="Kliknięcia"
+							dataKey="clicks"
+							stroke="hsl(194, 89%, 52%)"
+							strokeWidth={3}
+						/>
+					)}
+					{isViews && (
+						<Line
+							type="monotone"
+							name="Wyświetlenia"
+							dataKey="views"
+							stroke="hsl(307, 100%, 50%)"
+							strokeWidth={3}
+						/>
+					)}
+					{isCtr && (
+						<Line
+							type="monotone"
+							name="CTR"
+							dataKey="ctr"
+							stroke="hsl(135, 78%, 49%)"
+							strokeWidth={3}
+						/>
+					)}
+					{isPosition && (
+						<Line
+							type="monotone"
+							name="Pozycja"
+							dataKey="position"
+							stroke="hsl(66, 100%, 55%)"
+							strokeWidth={3}
+						/>
+					)}
+					<CartesianGrid stroke="hsla(0, 0%, 64%,.5)" />
+					<XAxis dataKey="time" />
+					<YAxis />
+					<Tooltip />
+				</LineChart>
+			</div>
+		</div>
+	);
 }

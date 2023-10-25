@@ -2,6 +2,7 @@ import Link from "next/link";
 import { PiCursorClick, PiEye } from "react-icons/pi";
 import { IoIosStats } from "react-icons/io";
 import { GiFlatPlatform } from "react-icons/gi";
+import styles from "views/DashboardView/ClientView/GoogleSearchConsole/GoogleSearchConsoleDataTile/GoogleSearchConsoleTile.module.scss";
 
 export type tGoogleSearchConsoleDataTile = {
 	clicks: number;
@@ -15,7 +16,7 @@ export default function GoogleSearchConsoleDataTile(
 ) {
 	const { clicks, ctr, impressions, keys, position } = props;
 	return (
-		<li>
+		<li className={styles.wrapper}>
 			<h3>
 				<Link href={`${keys[0]}`} target="_blank">
 					{keys[0]}
@@ -38,7 +39,7 @@ export default function GoogleSearchConsoleDataTile(
 					<span>
 						<IoIosStats />
 					</span>
-					<p>{Math.round(ctr * 100) / 100}%</p>
+					<p>{Math.round(ctr * 1000) / 1000}%</p>
 				</li>
 				<li title="Średnia pozycja">
 					<span>

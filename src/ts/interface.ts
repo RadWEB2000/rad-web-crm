@@ -15,9 +15,9 @@ export interface iGoogleSearchConsoleResponseData {
 		userAgentDirectives: any[]; // Jeśli znasz dokładny typ obiektu wewnątrz tej tablicy, zastąp 'any' odpowiednim typem
 		paramsSerializer: Function;
 		headers: {
-			'x-goog-api-client': string;
-			'Accept-Encoding': string;
-			'User-Agent': string;
+			"x-goog-api-client": string;
+			"Accept-Encoding": string;
+			"User-Agent": string;
 			Authorization: string;
 		};
 		params: {
@@ -42,18 +42,18 @@ export interface iGoogleSearchConsoleResponseData {
 		responseAggregationType: string;
 	};
 	headers: {
-		'alt-svc': string;
-		'cache-control': string;
+		"alt-svc": string;
+		"cache-control": string;
 		connection: string;
-		'content-encoding': string;
-		'content-type': string;
+		"content-encoding": string;
+		"content-type": string;
 		date: string;
 		server: string;
-		'transfer-encoding': string;
+		"transfer-encoding": string;
 		vary: string;
-		'x-content-type-options': string;
-		'x-frame-options': string;
-		'x-xss-protection': string;
+		"x-content-type-options": string;
+		"x-frame-options": string;
+		"x-xss-protection": string;
 	};
 	status: 200 | 300 | 301 | 302 | 400 | 402 | 404;
 	statusText: string;
@@ -62,18 +62,10 @@ export interface iGoogleSearchConsoleResponseData {
 	};
 }
 
-<<<<<<< HEAD
 export interface iGoogleSearchConsoleResponseCharts {
 	keys: Date[];
 	clicks: number;
 	impressions: number;
 	ctr: number;
-=======
-export interface iGoogleSearchConsoleChart {
-	keys: string[];
-	clicks: number;
-	ctr: number;
-	impressions: number;
->>>>>>> d71b0d0e838feafb75b373fe469ae17a7b6f9e51
 	position: number;
 }

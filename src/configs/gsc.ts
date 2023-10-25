@@ -1,3 +1,4 @@
+import getDate from "lib/functions/getDate";
 import { iGoogleSearchConsoleResponseData } from "ts/interface";
 
 const searchConsole = require("@googleapis/searchconsole");
@@ -21,7 +22,7 @@ export default async function getGoogleSearchConsoleData(
 		.query({
 			startDate: "2020-01-01",
 			siteUrl: url,
-			endDate: "2023-10-24",
+			endDate: `${getDate().year}-${getDate().month}-${getDate().day}`,
 			dimensions: [dimension],
 			rowLimit: 100,
 		})

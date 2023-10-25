@@ -13,11 +13,10 @@ export default function GoogleSearchConsole(props: tGoogleSearchConsole) {
 	const { chart, statistics } = props;
 	return (
 		<div>
-			<GoogleSearchConsoleChart data={chart} />
+			<GoogleSearchConsoleChart chart={chart} />
 			<ul>
 				{statistics
 					.reverse()
-					.slice(0, 4)
 					.map(({ clicks, impressions, ctr, keys, position }) => {
 						return (
 							<GoogleSearchConsoleDataTile
