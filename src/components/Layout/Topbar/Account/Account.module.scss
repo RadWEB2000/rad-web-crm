@@ -17,6 +17,7 @@
 		}
 		& > p {
 			@include font(1.8rem, 700);
+			display: none;
 		}
 		& > span {
 			@include flex(center, center);
@@ -51,6 +52,18 @@
 					aspect-ratio: 1/1;
 					font-size: 1.8rem;
 					height: 100%;
+				}
+			}
+		}
+	}
+}
+
+@media only screen {
+	@media (min-width: 1000px) {
+		.wrapper {
+			& > .button {
+				& > p {
+					display: unset;
 				}
 			}
 		}

@@ -10,15 +10,28 @@
 	z-index: 999;
 
 	& > .search {
-		grid-column: 1/15;
+		grid-column: 1/17;
 		@include flex(center, flex-start, row);
-		padding: 0 0 0 3rem;
+		padding: 0 0 0 1rem;
 		// background: aqua;
 	}
 	& > .account {
 		@include flex(center, flex-end, row);
 		// background: red;
-		grid-column: 15/-1;
-		padding: 0 7rem 0 0;
+		grid-column: 17/-1;
+		padding: 0 2rem 0 0;
+	}
+}
+
+@media only screen {
+	@media (min-width: 1000px) {
+		.wrapper {
+			& > .search {
+				grid-column: 1/15;
+			}
+			& > .account {
+				grid-column: 15/-1;
+			}
+		}
 	}
 }
