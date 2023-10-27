@@ -1,7 +1,7 @@
 @import "../../../../../../styles/Variables.scss";
 
 .wrapper {
-	@include size(auto, 45rem);
+	@include size(auto, clamp(5rem, 45rem, 95%));
 	background-image: linear-gradient(
 		to bottom right,
 		$rasin-primary,
