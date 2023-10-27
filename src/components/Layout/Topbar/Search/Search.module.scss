@@ -2,18 +2,20 @@
 
 .wrapper {
 	position: relative;
-	width: clamp(15rem, 65rem, 95%);
+	width: clamp(15rem, 85rem, 95%);
 	& > .form {
 		@include flex(center, center);
 		padding: 0;
 		width: 100%;
 		& > .field {
-			background: green;
+			@include font(1.8rem, 500);
 			@include size(4.15rem, 100%);
-			padding: 0 1.15rem;
-			color: white;
+			border-radius: 1rem;
+			background-color: rgba($slate, 0.24);
+			padding: 0 2.15rem;
+			color: $white;
 			&::placeholder {
-				color: yellow;
+				color: $slate;
 			}
 		}
 	}
@@ -23,11 +25,22 @@
 		border-radius: 0 0 1rem 1rem;
 		box-shadow: 0 0.6rem 0.6rem hsla(0, 100%, 0%, 0.25);
 		background-color: $rasin-primary;
-		width: clamp(15rem, 65rem, 100%);
+		width: clamp(15rem, 85rem, 100%);
 		padding: 1rem 1.5rem;
 		& > .item {
-			background: red;
-			border-bottom: 1.2px solid $rasin-quatenary;
+			@include size(3.5rem, 100%);
+			border-bottom: 1.2px solid rgba($slate, 0.4);
+			transition: 0.15s ease-in-out background-color;
+			&:focus-within,
+			&:hover {
+				background-color: rgba($ivory, 0.05);
+			}
+
+			& > a {
+				@include flex(center, flex-start);
+				@include size(100%, 100%);
+				padding: 0 1rem;
+			}
 		}
 	}
 }

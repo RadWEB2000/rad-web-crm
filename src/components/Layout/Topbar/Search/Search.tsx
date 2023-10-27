@@ -13,8 +13,13 @@ export default function Search() {
 
 	return (
 		<div className={styles.wrapper}>
-			<form className={styles.form}>
+			<form
+				autoComplete="off"
+				className={styles.form}
+				onSubmit={(e) => e.preventDefault()}
+			>
 				<input
+					autoComplete="off"
 					className={styles.field}
 					id="website"
 					name="website"

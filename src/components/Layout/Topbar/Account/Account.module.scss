@@ -3,15 +3,56 @@
 .wrapper {
 	position: relative;
 	& > .button {
-		@include flex(center, center, row, 0.5rem, null, true);
-		background: white;
+		@include flex(center, flex-end, row, 1.15rem, null, true);
+		@include size(4rem, 25rem);
+		& > * {
+			color: rgba($ivory, 0.7);
+			transition: 0.15s ease-in-out color;
+		}
+		&:focus-within,
+		&:hover {
+			& > * {
+				color: $ivory;
+			}
+		}
+		& > p {
+			@include font(1.8rem, 700);
+		}
+		& > span {
+			@include flex(center, center);
+			aspect-ratio: 1/1;
+			font-size: 3rem;
+			height: 100%;
+		}
 	}
 	& > .list {
 		@include flex(flex-start, flex-start, column, null, 0.15rem, false);
+		box-shadow: 0 0.6rem 0.6rem hsla(0, 100%, 0%, 0.25);
 		position: absolute;
 		background-color: $rasin-primary;
+		width: 100%;
 		& > .item {
-			border-bottom: 1.2px solid $rasin-quatenary;
+			@include size(4.15rem, 100%);
+			border-bottom: 1.2px solid rgba($slate, 0.4);
+			transition: 0.15s ease-in-out background-color;
+			&:focus-within,
+			&:hover {
+				background-color: rgba($ivory, 0.05);
+			}
+
+			& > a {
+				@include flex(center, flex-start, row nowrap, 1.2rem);
+				@include size(100%, 100%);
+				& > p {
+					@include font(1.5rem, 500);
+				}
+				& > span {
+					@include flex(center, center);
+					aspect-ratio: 1/1;
+					font-size: 1.8rem;
+					height: 100%;
+				}
+			}
 		}
 	}
 }
