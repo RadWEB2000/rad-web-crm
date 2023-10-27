@@ -3,12 +3,7 @@
 .wrapper {
 	display: grid;
 	grid-template-columns: repeat(21, 1fr);
-	background-color: $rasin-quinary;
-	position: sticky;
-	height: 6.45rem;
-	top: 0;
-	z-index: 999;
-
+	z-index: 999999999;
 	& > .search {
 		grid-column: 1/17;
 		@include flex(center, flex-start, row);

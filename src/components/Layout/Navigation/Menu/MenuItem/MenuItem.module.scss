@@ -17,8 +17,11 @@
 		& > span {
 			@include size(100%, 100%);
 			color: $verdigris;
-			transition: 0.15s ease-in-out color;
-			font-size: 2.4rem;
+			font-size: 2rem;
+			transition: 0.35s ease-in-out color;
+		}
+		& > p {
+			@include font(2rem, 500, 1, null, -0.15px, start, null, null);
 		}
 		&::before {
 			@include size(1.2px, 0%);

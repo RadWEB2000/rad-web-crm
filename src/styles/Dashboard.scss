@@ -1,6 +1,9 @@
 @import "./Variables.scss";
 
 body {
+	// align-content: start;
+	// align-self: start;
+	// justify-items: start;
 	align-items: start;
 	display: grid;
 	grid-template-rows: calc(100vh - 7rem) 7rem;
@@ -14,69 +17,9 @@ body {
 }
 
 .box {
-	overflow-y: scroll;
-	height: 100%;
-	width: 100%;
-	grid-row: 1;
-}
-
-@media only screen {
-	@media (min-width: 550px) {
-		body {
-			grid-template-rows: calc(100vh - 9rem) 9rem;
-		}
-
-		.nav {
-			height: clamp(100%, 100%, 9rem);
-		}
-	}
-	@media (min-width: 950px) {
-		body {
-			grid-template-columns: repeat(27, 1fr);
-			grid-template-rows: unset;
-			position: relative;
-		}
-
-		.nav,
-		.box {
-			grid-row: unset;
-			overflow-y: unset;
-			width: 100%;
-		}
-		.nav {
-			grid-column: 1/7;
-		}
-
-		.box {
-			grid-column: 7/-1;
-			height: auto;
-		}
-	}
-	@media (min-width: 1250px) {
-		.nav {
-			grid-column: 1/6;
-		}
-
-		.box {
-			grid-column: 6/-1;
-		}
-	}
-	@media (min-width: 1400px) {
-		.nav {
-			grid-column: 1/5;
-		}
-
-		.box {
-			grid-column: 5/-1;
-		}
-	}
-	@media (min-width: 1700px) {
-		.nav {
-			grid-column: 1/4;
-		}
-
-		.box {
-			grid-column: 4/-1;
-		}
+	@include flex(flex-start, flex-start, column);
+	grid-column: 4/-1;
+	& > * {
+		width: 100%;
 	}
 }
