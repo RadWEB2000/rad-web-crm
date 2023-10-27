@@ -1,6 +1,6 @@
 import { iMenu } from "ts/interface";
-import Submenu from "nav/Menu/Submenu";
 import MenuItem from "nav/Menu/MenuItem";
+import styles from "nav/Menu/Menu.module.scss";
 
 type tMenu = {
 	menu: iMenu[];
@@ -9,29 +9,9 @@ type tMenu = {
 export default function Menu(props: tMenu) {
 	const { menu } = props;
 	return (
-		<menu>
-			{menu.map(({ icon, label, uri, submenu }, index) => {
-				if (submenu) {
-					return (
-						<Submenu
-							icon={icon}
-							key={index}
-							label={label}
-							submenu={submenu}
-							uri={uri}
-						/>
-					);
-				} else {
-					return (
-						<MenuItem
-							icon={icon}
-							key={index}
-							label={label}
-							variant="regural"
-							uri={uri}
-						/>
-					);
-				}
+		<menu className={styles.wrapper}>
+			{menu.map(({ icon, label, uri }, index) => {
+				return <MenuItem icon={icon} key={index} label={label} uri={uri} />;
 			})}
 		</menu>
 	);

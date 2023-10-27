@@ -18,32 +18,3 @@ $position: hsl(66, 100%, 55%);
 		}
 	}
 }
-
-.button {
-	@include font(2rem, 600, 1, null, null, center, null, null);
-	@include flex(center, center);
-	padding: 1.5rem 2rem;
-	border-radius: 1.15rem;
-
-	@include themeButton("clicks", $clicks);
-	@include themeButton("views", $views);
-	@include themeButton("ctr", $ctr);
-	@include themeButton("position", $position);
-}
-
-.wrapper {
-	background: darkgreen;
-	padding: 1rem 1.1rem;
-}
-
-.buttons {
-	@include flex(center, flex-start, row, 1rem, null, true);
-}
-
-.chart_box {
-	margin-top: 2rem;
-	background: black;
-	& > .chart {
-		@include size(45rem, 65rem);
-	}
-}

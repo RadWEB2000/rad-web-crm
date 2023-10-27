@@ -1,17 +1,15 @@
 @import "../../../../styles/Variables.scss";
 
 .wrapper {
-	&,
+	@include flex(center, center);
+	@include size(100%, 90%);
 	& > a {
-		@include flex(center, center);
-	}
-	& > a {
-		@include font(3rem, 700, 1.4, null, 0.5px, center, $white, null);
-		padding: 0.5rem 0rem;
-		transition: 0.15s ease-in-out color;
+		@include font(2.5rem, 700, 1.2, null, null, center, $ivory, null);
+		transition: 0.07s linear color, 0.07s linear text-shadow;
 		&:focus-within,
 		&:hover {
-			color: $turqoise;
+			color: $white;
+			text-shadow: 0 0 2rem hsla(0, 100%, 100%, 0.7);
 		}
 	}
 }

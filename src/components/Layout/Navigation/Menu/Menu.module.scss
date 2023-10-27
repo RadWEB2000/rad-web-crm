@@ -1,0 +1,22 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	@include flex(center, center, row, 0.35rem, null, true);
+	overflow-x: scroll;
+	height: 100%;
+}
+
+@media only screen {
+	@media (min-width: 550px) {
+		.wrapper {
+			column-gap: 1rem;
+		}
+	}
+	@media (min-width: 950px) {
+		.wrapper {
+			@include flex(flex-start, flex-start, column, 0.35rem, null, true);
+			height: unset;
+			overflow-x: visible;
+		}
+	}
+}

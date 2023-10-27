@@ -1,0 +1,33 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	position: relative;
+	width: clamp(15rem, 65rem, 95%);
+	& > .form {
+		@include flex(center, center);
+		padding: 0;
+		width: 100%;
+		& > .field {
+			background: green;
+			@include size(4.15rem, 100%);
+			padding: 0 1.15rem;
+			color: white;
+			&::placeholder {
+				color: yellow;
+			}
+		}
+	}
+	& > .list {
+		@include flex(flex-start, flex-start, column, null, 0.15rem, false);
+		position: absolute;
+		border-radius: 0 0 1rem 1rem;
+		box-shadow: 0 0.6rem 0.6rem hsla(0, 100%, 0%, 0.25);
+		background-color: $rasin-primary;
+		width: clamp(15rem, 65rem, 100%);
+		padding: 1rem 1.5rem;
+		& > .item {
+			background: red;
+			border-bottom: 1.2px solid $rasin-quatenary;
+		}
+	}
+}

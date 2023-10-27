@@ -1,26 +1,24 @@
 @import "../../../styles/Variables.scss";
 
 .wrapper {
-	background: $rasin-quinary;
-	grid-column: 4/-1;
-	height: 5rem;
-	position: sticky;
-	top: 0;
 	display: grid;
 	grid-template-columns: repeat(21, 1fr);
-	z-index: 999999999;
+	background-color: $rasin-quinary;
+	position: sticky;
+	height: 6.45rem;
+	top: 0;
+	z-index: 999;
+
 	& > .search {
-		// background: blue;
-		grid-column: 1/18;
+		grid-column: 1/15;
+		@include flex(center, flex-start, row);
+		padding: 0 0 0 3rem;
+		// background: aqua;
 	}
-
 	& > .account {
-		// background: orangered;
-		grid-column: 18/21;
-	}
-
-	& > .button {
-		// background: silver;
-		grid-column: 21/-1;
+		@include flex(center, flex-end, row);
+		// background: red;
+		grid-column: 15/-1;
+		padding: 0 7rem 0 0;
 	}
 }

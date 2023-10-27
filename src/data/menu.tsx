@@ -1,4 +1,6 @@
 import { iMenu } from "ts/interface";
+import { GoSignOut } from "react-icons/go";
+
 import {
 	LuClipboardList,
 	LuContact2,
@@ -19,24 +21,6 @@ export const menu: iMenu[] = [
 		label: "Zadania",
 		icon: <LuClipboardList />,
 		uri: "/dashboard",
-		submenu: [
-			{
-				label: "Do zrobienia",
-				uri: "/dashboard",
-			},
-			{
-				label: "Zbliżające się",
-				uri: "/dashboard",
-			},
-			{
-				label: "Przekroczone",
-				uri: "/dashboard",
-			},
-			{
-				label: "Wykonane",
-				uri: "/dashboard",
-			},
-		],
 	},
 	{
 		label: "Klienci",
@@ -49,7 +33,7 @@ export const menu: iMenu[] = [
 		uri: "/dashboard",
 	},
 	{
-		label: "Bazy danych",
+		label: "Baza wiedzy",
 		icon: <LuNewspaper />,
 		uri: "/dashboard",
 	},
@@ -63,4 +47,9 @@ export const menu: iMenu[] = [
 		icon: <LuSettings />,
 		uri: "/dashboard",
 	},
+	// {
+	// 	icon: <GoSignOut />,
+	// 	label: "Wyloguj",
+	// 	uri: "/dashbord/",
+	// },
 ];

@@ -1,0 +1,17 @@
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+	position: relative;
+	& > .button {
+		@include flex(center, center, row, 0.5rem, null, true);
+		background: white;
+	}
+	& > .list {
+		@include flex(flex-start, flex-start, column, null, 0.15rem, false);
+		position: absolute;
+		background-color: $rasin-primary;
+		& > .item {
+			border-bottom: 1.2px solid $rasin-quatenary;
+		}
+	}
+}

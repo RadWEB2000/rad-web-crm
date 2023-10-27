@@ -1,10 +1,11 @@
 @import "../../../../styles/Variables.scss";
 
 .wrapper {
+	width: 100%;
 	& > ul {
-		@include flex(center, space-evenly, row nowrap);
+		@include flex(center, center, row nowrap, 2rem);
 		& > li {
-			@include size(4.15rem, 4.15rem);
+			@include size(4.5rem, 4.5rem);
 			&,
 			& > a {
 				@include flex(center, center);

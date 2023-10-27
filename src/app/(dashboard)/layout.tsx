@@ -18,9 +18,16 @@ export default function RootLayout({
 	return (
 		<html lang="pl">
 			<body>
-				<Navigation menu={menu} settings={settings} />
+				<div className="nav">
+					<Navigation menu={menu} settings={settings} />
+				</div>
 				<div className="box">
-					<Topbar />
+					<Topbar
+						account={{
+							menu: settings,
+							user: "Radosław",
+						}}
+					/>
 					<div className="main">{children}</div>
 				</div>
 			</body>
