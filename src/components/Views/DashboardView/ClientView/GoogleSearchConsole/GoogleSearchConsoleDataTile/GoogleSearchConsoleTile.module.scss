@@ -1,1 +1,33 @@
 @import "../../../../../../styles/Variables.scss";
+
+.wrapper {
+	@include size(auto, 45rem);
+	background-image: linear-gradient(
+		to bottom right,
+		$rasin-primary,
+		$rasin-quinary
+	);
+	border-radius: 1rem;
+	overflow: hidden;
+	margin: 2rem auto;
+
+	& > h3 {
+		@include font(1.65rem, 600, null, null, -0.5px);
+		background-color: rgba($ivory, 0.02);
+		padding: 1rem 2rem;
+	}
+
+	& > ul {
+		@include flex(center, space-evenly, row nowrap, 0.5rem, null, true);
+		padding: 1rem 2rem;
+		& > li {
+			@include flex(center, center, column);
+			& > span {
+				font-size: 3rem;
+			}
+			& > p {
+				@include font(2rem, 700);
+			}
+		}
+	}
+}
