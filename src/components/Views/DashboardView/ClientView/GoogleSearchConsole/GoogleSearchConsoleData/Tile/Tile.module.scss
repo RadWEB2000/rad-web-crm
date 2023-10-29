@@ -1,0 +1,25 @@
+@import '../../../../../../../styles/Variables.scss';
+
+.wrapper {
+	background-color: rgba($rasin-secondary, 0.6);
+	& > * {
+		transition: 0.15s linear background-color;
+	}
+	& > td {
+		padding: 1.5rem 1rem;
+		border-radius: 1rem;
+	}
+
+	& > .item {
+		text-align: center;
+	}
+	& > .name {
+		padding: 1.5rem 2rem;
+		font-weight: 700;
+	}
+
+	&:focus-within,
+	&:hover {
+		background-color: rgba($rasin-secondary, 0.4);
+	}
+}

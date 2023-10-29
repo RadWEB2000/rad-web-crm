@@ -1,0 +1,32 @@
+@import '../../../../../../styles/Variables.scss';
+
+.wrapper {
+	background: red;
+	width: clamp(5rem, 95rem, 95%);
+	margin: 2rem auto;
+	padding: 2rem 4rem;
+	background-color: $rasin-primary;
+	background-image: linear-gradient(
+		to right bottom,
+		$rasin-tertiary,
+		$rasin-quinary
+	);
+	background-attachment: fixed;
+	border-radius: 2rem;
+
+	& > .results {
+		width: 100%;
+		& > .head {
+			background: gold;
+			& > .box {
+				background: orange;
+				& > .item {
+					background-color: violet;
+					padding: 1.5rem;
+					font-size: 2rem;
+					font-weight: 700;
+				}
+			}
+		}
+	}
+}

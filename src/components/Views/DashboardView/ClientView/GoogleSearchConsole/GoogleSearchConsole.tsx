@@ -1,35 +1,23 @@
-import { iGoogleSearchConsoleResponseCharts } from "ts/interface";
-import GoogleSearchConsoleChart from "./GoogleSearchConsoleChart";
-import GoogleSearchConsoleDataTile, {
-	tGoogleSearchConsoleDataTile,
-} from "./GoogleSearchConsoleDataTile/GoogleSearchConsoleDataTile";
+import {
+	iGoogleSearchConsoleResponseCharts,
+	iGoogleSearchConsoleData,
+} from 'ts/interface';
+import GoogleSearchConsoleChart from './GoogleSearchConsoleChart';
+import GoogleSearchConsoleData from './GoogleSearchConsoleData/GoogleSearchConsoleData';
 
 type tGoogleSearchConsole = {
 	chart: iGoogleSearchConsoleResponseCharts[];
-	statistics: tGoogleSearchConsoleDataTile[];
+	statistics: iGoogleSearchConsoleData[];
+	queries: iGoogleSearchConsoleData[];
 };
 
 export default function GoogleSearchConsole(props: tGoogleSearchConsole) {
-	const { chart, statistics } = props;
+	const { chart, statistics, queries } = props;
+
 	return (
 		<div>
 			<GoogleSearchConsoleChart chart={chart} />
-			<ul>
-				{statistics
-					.reverse()
-					.map(({ clicks, impressions, ctr, keys, position }) => {
-						return (
-							<GoogleSearchConsoleDataTile
-								clicks={clicks}
-								ctr={ctr}
-								impressions={impressions}
-								keys={keys}
-								key={keys[0]}
-								position={position}
-							/>
-						);
-					})}
-			</ul>
+			<GoogleSearchConsoleData data={queries} />
 		</div>
 	);
 }

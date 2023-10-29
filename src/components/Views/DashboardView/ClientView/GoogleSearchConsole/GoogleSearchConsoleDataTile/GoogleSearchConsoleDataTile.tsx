@@ -1,8 +1,7 @@
-import Link from "next/link";
-import { PiCursorClick, PiEye } from "react-icons/pi";
-import { IoIosStats } from "react-icons/io";
-import { GiFlatPlatform } from "react-icons/gi";
-import styles from "views/DashboardView/ClientView/GoogleSearchConsole/GoogleSearchConsoleDataTile/GoogleSearchConsoleTile.module.scss";
+import { PiCursorClick, PiEye } from 'react-icons/pi';
+import { IoIosStats } from 'react-icons/io';
+import { GiFlatPlatform } from 'react-icons/gi';
+import styles from 'views/DashboardView/ClientView/GoogleSearchConsole/GoogleSearchConsoleDataTile/GoogleSearchConsoleTile.module.scss';
 
 export type tGoogleSearchConsoleDataTile = {
 	clicks: number;
@@ -17,11 +16,7 @@ export default function GoogleSearchConsoleDataTile(
 	const { clicks, ctr, impressions, keys, position } = props;
 	return (
 		<li className={styles.wrapper}>
-			<h3>
-				<Link href={`${keys[0]}`} target="_blank">
-					{keys[0]}
-				</Link>
-			</h3>
+			<h3>{keys[0]}</h3>
 			<ul>
 				<li title="Kliknięcia">
 					<span>

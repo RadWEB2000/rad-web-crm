@@ -1,0 +1,32 @@
+@import '../../../../../../../styles/Variables.scss';
+
+$clicks: hsl(194, 89%, 52%);
+$views: hsl(307, 100%, 50%);
+$ctr: hsl(135, 78%, 49%);
+$position: hsl(66, 100%, 55%);
+
+@mixin themeButton($theme, $color) {
+	&[data-theme='#{$theme}'] {
+		border: 2px solid $color;
+		color: $color;
+		transition: 0.15s ease-in-out all;
+
+		&[data-active='true'] {
+			background-color: $color;
+			color: $rasin-primary;
+			transition: 0.15s ease-in-out all;
+		}
+	}
+}
+
+.wrapper {
+	@include font(1.65rem, 600, 1, null, null, center, null, null);
+	@include flex(center, center);
+	padding: 0.65rem 1.2rem;
+	border-radius: 0.45rem;
+
+	@include themeButton('clicks', lime);
+	@include themeButton('views', $views);
+	@include themeButton('ctr', $ctr);
+	@include themeButton('position', $position);
+}

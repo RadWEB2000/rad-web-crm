@@ -11,31 +11,10 @@ import {
 } from 'recharts';
 import { useState } from 'react';
 import styles from 'views/DashboardView/ClientView/GoogleSearchConsole/GoogleSearchConsoleChart/GoogleSearchConsoleChart.module.scss';
-
+import Button from 'views/DashboardView/ClientView/GoogleSearchConsole/GoogleSearchConsoleChart/Button';
 type tGoogleSearchConsoleChart = {
 	chart: iGoogleSearchConsoleResponseCharts[];
 };
-
-type tButton = {
-	action: any;
-	isActive: boolean;
-	name: string;
-	theme: 'clicks' | 'views' | 'ctr' | 'position';
-};
-
-function Button(props: tButton) {
-	const { action, isActive, name, theme } = props;
-	return (
-		<button
-			className={styles.button}
-			data-active={isActive}
-			data-theme={theme}
-			onClick={action}
-		>
-			{name}
-		</button>
-	);
-}
 
 export default function GoogleSearchConsoleChart(
 	props: tGoogleSearchConsoleChart
