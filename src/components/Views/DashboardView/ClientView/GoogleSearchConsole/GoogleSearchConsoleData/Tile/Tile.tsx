@@ -1,5 +1,5 @@
-import { iGoogleSearchConsoleData } from 'ts/interface';
-import styles from 'views/DashboardView/ClientView/GoogleSearchConsole/GoogleSearchConsoleData/Tile/Tile.module.scss';
+import { iGoogleSearchConsoleData } from "ts/interface";
+import styles from "views/DashboardView/ClientView/GoogleSearchConsole/GoogleSearchConsoleData/Tile/Tile.module.scss";
 
 type tTile = iGoogleSearchConsoleData;
 

@@ -1,9 +1,5 @@
 @import '../../../../../../../styles/Variables.scss';
 
-$clicks: hsl(194, 89%, 52%);
-$views: hsl(307, 100%, 50%);
-$ctr: hsl(135, 78%, 49%);
-$position: hsl(66, 100%, 55%);
 
 @mixin themeButton($theme, $color) {
 	&[data-theme='#{$theme}'] {

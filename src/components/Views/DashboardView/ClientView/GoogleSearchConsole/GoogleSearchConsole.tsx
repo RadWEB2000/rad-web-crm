@@ -1,23 +1,28 @@
+"use client";
+
 import {
 	iGoogleSearchConsoleResponseCharts,
 	iGoogleSearchConsoleData,
-} from 'ts/interface';
-import GoogleSearchConsoleChart from './GoogleSearchConsoleChart';
-import GoogleSearchConsoleData from './GoogleSearchConsoleData/GoogleSearchConsoleData';
+} from "ts/interface";
+import GoogleSearchConsoleChart from "./GoogleSearchConsoleChart";
+import GoogleSearchConsoleData from "./GoogleSearchConsoleData/GoogleSearchConsoleData";
+import DataExplorerProvider from "context/DataExplorerContext";
 
 type tGoogleSearchConsole = {
 	chart: iGoogleSearchConsoleResponseCharts[];
-	statistics: iGoogleSearchConsoleData[];
+	pages: iGoogleSearchConsoleData[];
 	queries: iGoogleSearchConsoleData[];
 };
 
 export default function GoogleSearchConsole(props: tGoogleSearchConsole) {
-	const { chart, statistics, queries } = props;
+	const { chart, pages, queries } = props;
 
 	return (
 		<div>
-			<GoogleSearchConsoleChart chart={chart} />
-			<GoogleSearchConsoleData data={queries} />
+			{/* <GoogleSearchConsoleChart chart={chart} /> */}
+			<DataExplorerProvider pages={pages} queries={queries}>
+				<GoogleSearchConsoleData />
+			</DataExplorerProvider>
 		</div>
 	);
 }
