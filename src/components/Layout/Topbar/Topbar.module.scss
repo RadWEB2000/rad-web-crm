@@ -16,7 +16,7 @@
 	}
 	& > .account {
 		@include flex(center, flex-end, row);
-		// background: red;
+		background: red;
 		grid-column: 17/-1;
 		padding: 0 2rem 0 0;
 	}
