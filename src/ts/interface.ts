@@ -1,55 +1,19 @@
+import {
+	tCategoryAuditLighthouseResult,
+	tCategoryNamesAuditLighthouseResult,
+	uAuditLighthouseResult,
+	uAuditNamesLighthouseResult,
+	uCategoryGroupsLighthouseResult,
+	uCategoryGroupsNamesLighthouseResult,
+	uFullPageScreenshotLighthouseResult,
+	uFullPageScreenshotNamesLighthouseResult,
+	uScore,
+} from "ts/union";
+
 export interface iMenu {
 	icon: JSX.Element | React.ReactNode;
 	label: string;
 	uri: string;
-}
-
-export interface iGoogleSearchConsoleResponseData {
-	config: {
-		url: string;
-		method: string;
-		userAgentDirectives: any[]; // Jeśli znasz dokładny typ obiektu wewnątrz tej tablicy, zastąp 'any' odpowiednim typem
-		paramsSerializer: Function;
-		headers: {
-			'x-goog-api-client': string;
-			'Accept-Encoding': string;
-			'User-Agent': string;
-			Authorization: string;
-		};
-		params: {
-			startDate: string;
-			endDate: string;
-			dimensions: any[]; // Jeśli znasz dokładny typ obiektu wewnątrz tej tablicy, zastąp 'any' odpowiednim typem
-			rowLimit: number;
-		};
-		validateStatus: Function;
-		retry: boolean;
-		responseType: string;
-		errorRedactor: Function;
-	};
-	data: {
-		rows: iGoogleSearchConsoleResponseQueries[]; // Jeśli znasz dokładny typ obiektu wewnątrz tej tablicy, zastąp 'any' odpowiednim typem
-		responseAggregationType: string;
-	};
-	headers: {
-		'alt-svc': string;
-		'cache-control': string;
-		connection: string;
-		'content-encoding': string;
-		'content-type': string;
-		date: string;
-		server: string;
-		'transfer-encoding': string;
-		vary: string;
-		'x-content-type-options': string;
-		'x-frame-options': string;
-		'x-xss-protection': string;
-	};
-	status: 200 | 300 | 301 | 302 | 400 | 402 | 404;
-	statusText: string;
-	request: {
-		responseURL: string;
-	};
 }
 
 export interface iGoogleSearchConsoleResponseCharts {
@@ -60,17 +24,138 @@ export interface iGoogleSearchConsoleResponseCharts {
 	position: number;
 }
 
-export interface iGoogleSearchConsoleResponseTile {
-	keys: string[];
-	clicks: number;
-	impressions: number;
-	ctr: number;
-	position: number;
-}
 export interface iGoogleSearchConsoleData {
 	keys: string[];
 	clicks: number;
 	impressions: number;
 	ctr: number;
 	position: number;
+}
+
+export interface iGetGooglePageSpeedData {
+	captchaResult: string;
+	kind: string;
+	id: string;
+	loadingExperience: { initial_url: string };
+	lighthouseResult: {
+		requestedUrl: string;
+		finalUrl: string;
+		mainDocumentUrl: string;
+		finalDisplayedUrl: string;
+		lighthouseVersion: string;
+		userAgent: string;
+		fetchTime: Date;
+		environment: {
+			networkUserAgent: string;
+			hostUserAgent: string;
+			benchmarkIndex: number;
+		};
+		runWarnings: any;
+		configSettings: {
+			emulatedFormFactor: string;
+			formFactor: string;
+			locale: string;
+			onlyCategories: any[];
+			channel: string;
+		};
+		audits: {
+			[key in uAuditNamesLighthouseResult]: uAuditLighthouseResult;
+		};
+		categories: {
+			[key in tCategoryNamesAuditLighthouseResult]: tCategoryAuditLighthouseResult;
+		};
+		categoryGroups: {
+			[key in uCategoryGroupsNamesLighthouseResult]: uCategoryGroupsLighthouseResult;
+		};
+		timing: { total: number };
+		i18n: {
+			rendererFormattedStrings: {
+				varianceDisclaimer: string;
+				opportunityResourceColumnLabel: string;
+				opportunitySavingsColumnLabel: string;
+				errorMissingAuditInfo: string;
+				errorLabel: string;
+				warningHeader: string;
+				passedAuditsGroupTitle: string;
+				notApplicableAuditsGroupTitle: string;
+				manualAuditsGroupTitle: string;
+				toplevelWarningsMessage: string;
+				crcLongestDurationLabel: string;
+				crcInitialNavigation: string;
+				lsPerformanceCategoryDescription: string;
+				labDataTitle: string;
+				warningAuditsGroupTitle: string;
+				snippetExpandButtonLabel: string;
+				snippetCollapseButtonLabel: string;
+				thirdPartyResourcesLabel: string;
+				runtimeDesktopEmulation: string;
+				runtimeMobileEmulation: string;
+				runtimeNoEmulation: string;
+				runtimeSettingsBenchmark: string;
+				runtimeSettingsCPUThrottling: string;
+				runtimeSettingsDevice: string;
+				runtimeSettingsNetworkThrottling: string;
+				runtimeSettingsUANetwork: string;
+				runtimeUnknown: string;
+				dropdownCopyJSON: string;
+				dropdownDarkTheme: string;
+				dropdownPrintExpanded: string;
+				dropdownPrintSummary: string;
+				dropdownSaveGist: string;
+				dropdownSaveHTML: string;
+				dropdownSaveJSON: string;
+				dropdownViewer: string;
+				footerIssue: string;
+				throttlingProvided: string;
+				calculatorLink: string;
+				runtimeSettingsAxeVersion: string;
+				viewTreemapLabel: string;
+				showRelevantAudits: string;
+			};
+		};
+		entities: [
+			{
+				name: string;
+				isFirstParty: boolean;
+				isUnrecognized: boolean;
+				origins: any;
+			},
+			{
+				name: string;
+				homepage: string;
+				category: string;
+				origins: any;
+			},
+			{ name: string; isUnrecognized: boolean; origins: any },
+			{
+				name: string;
+				homepage: string;
+				category: string;
+				origins: any;
+			},
+			{
+				name: string;
+				homepage: string;
+				category: string;
+				origins: any;
+			},
+			{
+				name: string;
+				homepage: string;
+				category: string;
+				origins: any;
+			}
+		];
+		fullPageScreenshot: {
+			nodes: {
+				[key in uFullPageScreenshotNamesLighthouseResult]: uFullPageScreenshotLighthouseResult;
+			};
+			screenshot: {
+				data: string;
+				width: number;
+				height: number;
+			};
+		};
+		analysisUTCTimestamp: Date;
+	};
 }

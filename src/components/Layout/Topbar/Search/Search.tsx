@@ -9,7 +9,6 @@ export default function Search() {
 	const getWebsites = websites.filter((item) =>
 		item.uri.includes(searchValue.toLowerCase())
 	);
-	console.log(getWebsites);
 
 	return (
 		<div className={styles.wrapper}>
