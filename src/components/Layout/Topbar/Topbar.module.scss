@@ -1,10 +1,11 @@
-@import "../../../styles/Variables.scss";
+@import '../../../styles/Variables.scss';
 
 .wrapper {
 	@include size(6.45rem, 100%);
 	display: grid;
 	grid-template-columns: repeat(21, 1fr);
 	background-color: $rasin-quinary;
+	background: red;
 	position: sticky;
 	top: 0;
 	z-index: 999;
@@ -16,7 +17,6 @@
 	}
 	& > .account {
 		@include flex(center, flex-end, row);
-		background: red;
 		grid-column: 17/-1;
 		padding: 0 2rem 0 0;
 	}
