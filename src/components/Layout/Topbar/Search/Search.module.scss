@@ -1,4 +1,4 @@
-@import "../../../../styles/Variables.scss";
+@import '../../../../styles/Variables.scss';
 
 .wrapper {
 	position: relative;
@@ -9,10 +9,10 @@
 		width: 100%;
 		& > .field {
 			@include font(1.8rem, 500);
-			@include size(4.15rem, 100%);
+			@include size(3.55rem, 100%);
 			border-radius: 1rem;
 			background-color: rgba($slate, 0.24);
-			padding: 0 2.15rem;
+			padding: 0 1.65rem;
 			color: $white;
 			&::placeholder {
 				color: $slate;
