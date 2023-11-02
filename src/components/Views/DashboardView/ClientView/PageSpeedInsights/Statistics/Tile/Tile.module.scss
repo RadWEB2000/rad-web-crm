@@ -1,0 +1,24 @@
+@import "../../../../../../../styles/Variables.scss";
+
+.wrapper {
+	@include flex(flex-start, flex-start, column, null, 0.5rem);
+	width: 100%;
+	& > .box {
+		@include size(1.75rem, 100%);
+		border-radius: 1.2rem;
+		overflow: hidden;
+		& > .line {
+			display: block;
+			height: 100%;
+			border-radius: 0 2rem 2rem 0;
+			transition: 0.12s linear width;
+		}
+	}
+	& > .details {
+		@include flex(center, flex-start, row nowrap, 1rem, null, true);
+		& > .name,
+		& > .score {
+			@include font(1.6rem, 500, 1, capitalize, null, start);
+		}
+	}
+}

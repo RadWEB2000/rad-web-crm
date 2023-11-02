@@ -1,5 +1,5 @@
-'use client';
-import { iGoogleSearchConsoleResponseCharts } from 'ts/interface';
+"use client";
+import { iGoogleSearchConsoleResponseCharts } from "ts/interface";
 import {
 	LineChart,
 	Line,
@@ -8,10 +8,10 @@ import {
 	ResponsiveContainer,
 	YAxis,
 	Tooltip,
-} from 'recharts';
-import { useState } from 'react';
-import styles from 'views/DashboardView/ClientView/GoogleSearchConsole/GoogleSearchConsoleChart/GoogleSearchConsoleChart.module.scss';
-import Button from 'views/DashboardView/ClientView/GoogleSearchConsole/GoogleSearchConsoleChart/Button';
+} from "recharts";
+import { useState } from "react";
+import styles from "views/DashboardView/ClientView/GoogleSearchConsole/GoogleSearchConsoleChart/GoogleSearchConsoleChart.module.scss";
+import Button from "views/DashboardView/ClientView/GoogleSearchConsole/GoogleSearchConsoleChart/Button";
 type tGoogleSearchConsoleChart = {
 	chart: iGoogleSearchConsoleResponseCharts[];
 };
@@ -74,14 +74,8 @@ export default function GoogleSearchConsoleChart(
 				/>
 			</div>
 			<div className={styles.chart_box}>
-				<ResponsiveContainer
-					width={750}
-					height={450}
-				>
-					<LineChart
-						className={styles.chart}
-						data={data}
-					>
+				<ResponsiveContainer width="95%" height={450}>
+					<LineChart className={styles.chart} data={data}>
 						{isClicks && (
 							<Line
 								type="monotone"
@@ -123,12 +117,12 @@ export default function GoogleSearchConsoleChart(
 						<YAxis />
 						<Tooltip
 							wrapperStyle={{
-								background: 'red',
+								background: "red",
 							}}
 							contentStyle={{
-								backgroundColor: '#292d3e',
-								boxShadow: '0 0 1rem hsla(0, 100%, 0%, 0.5)',
-								border: 'unset',
+								backgroundColor: "#292d3e",
+								boxShadow: "0 0 1rem hsla(0, 100%, 0%, 0.5)",
+								border: "unset",
 							}}
 						/>
 					</LineChart>

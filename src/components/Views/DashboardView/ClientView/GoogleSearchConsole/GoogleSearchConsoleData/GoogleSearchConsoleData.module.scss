@@ -8,19 +8,9 @@
 }
 
 .wrapper {
-	background: red;
-	width: clamp(5rem, 125rem, 95%);
 	margin: 2rem auto;
-	padding: 6rem 4rem;
-	background-color: $rasin-primary;
-	background-image: linear-gradient(
-		to right bottom,
-		$rasin-tertiary,
-		$rasin-quinary
-	);
-	background-attachment: fixed;
-	border-radius: 2rem;
-
+	padding: 2rem 1.2rem;
+	width: clamp(5rem, 125rem, 95%);
 	& > .container {
 		max-height: 55rem;
 		overflow: scroll;
@@ -31,7 +21,7 @@
 		}
 		& > .results {
 			&[data-sorted="name"] {
- 				& th:nth-of-type(1) {
+				& th:nth-of-type(1) {
 					background: $white !important;
 					color: $rasin-primary !important;
 				}

@@ -1,4 +1,4 @@
-import { PieChart, Pie, Sector, ResponsiveContainer } from "recharts";
+import styles from "views/DashboardView/ClientView/PageSpeedInsights/Statistics/Tile/Tile.module.scss";
 
 type tTile = {
 	name: string;
@@ -11,57 +11,54 @@ type tGetColor = {
 	font: string;
 };
 
+function getColor(value: number): tGetColor {
+	if (value === 0 && value <= 49) {
+		return {
+			background: "rgba(255, 234, 234,  0.857)",
+			border: "#ff3333",
+			font: "#f32626",
+		};
+	} else if (value >= 50 && value <= 89) {
+		return {
+			background: "rgba(255, 246, 234, 0.857)",
+			border: "#ffaa33",
+			font: "#f9642e",
+		};
+	} else {
+		return {
+			background: "rgba(229, 250, 239, 0.857)",
+			border: "#00cc66",
+			font: "#19d419",
+		};
+	}
+}
+
 export default function Tile(props: tTile) {
 	const { name, value } = props;
-
-	function getColor(score: number): tGetColor {
-		const value: number = score * 100;
-		if (value === 0 && value <= 49) {
-			return {
-				background: "#ffeaea",
-				border: "#ff3333",
-				font: "#cc0000",
-			};
-		} else if (value >= 50 && value <= 89) {
-			return {
-				background: "#fff6ea",
-				border: "#ffaa33",
-				font: "#c53907",
-			};
-		} else {
-			return {
-				background: "#e5faef",
-				border: "#00cc66",
-				font: "#008800",
-			};
-		}
-	}
-
 	return (
-		<li
-			style={{
-				border: `2px solid ${getColor(value).background}`,
-			}}
-		>
-			<div>
-				<ResponsiveContainer width="100%" height="100%">
-					<PieChart width={400} height={400}>
-						<Pie
-							data={{ 1: value }}
-							cx="50%"
-							cy="50%"
-							innerRadius={60}
-							outerRadius={80}
-							fill={getColor(value).background}
-							dataKey="value"
-						/>
-					</PieChart>
-				</ResponsiveContainer>
+		<li className={styles.wrapper} title={`${name} : ${value}%`}>
+			<div
+				className={styles.box}
+				style={{
+					backgroundColor: getColor(value).background,
+				}}
+			>
+				<span
+					className={styles.line}
+					style={{
+						backgroundColor: getColor(value).border,
+						width: `${value}%`,
+					}}
+				/>
 			</div>
-			<section>
-				<header>
-					<h3>{name}</h3>
-				</header>
+			<section
+				className={styles.details}
+				style={{
+					color: getColor(value).font,
+				}}
+			>
+				<h3 className={styles.name}>{name}</h3>
+				<p className={styles.score}>{value}%</p>
 			</section>
 		</li>
 	);

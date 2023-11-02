@@ -1,7 +1,6 @@
-@import '../../../../../../styles/Variables.scss';
+@import "../../../../../../styles/Variables.scss";
 
 .wrapper {
-	background: darkgreen;
 	padding: 1rem 1.1rem;
 }
 
@@ -11,7 +10,6 @@
 
 .chart_box {
 	margin-top: 2rem;
-	background: black;
 	& > .chart {
 		@include size(45rem, 65rem);
 	}

@@ -1,0 +1,13 @@
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+	display: grid;
+	grid-template-columns: repeat(27, 1fr);
+	padding: 2rem 3rem;
+	& > .gsc {
+		grid-column: 1/20;
+	}
+	& > .pagespeed {
+		grid-column: 21/-1;
+	}
+}

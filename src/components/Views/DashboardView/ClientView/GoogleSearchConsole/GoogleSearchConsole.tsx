@@ -19,7 +19,7 @@ export default function GoogleSearchConsole(props: tGoogleSearchConsole) {
 
 	return (
 		<div>
-			{/* <GoogleSearchConsoleChart chart={chart} /> */}
+			<GoogleSearchConsoleChart chart={chart} />
 			<DataExplorerProvider pages={pages} queries={queries}>
 				<GoogleSearchConsoleData />
 			</DataExplorerProvider>

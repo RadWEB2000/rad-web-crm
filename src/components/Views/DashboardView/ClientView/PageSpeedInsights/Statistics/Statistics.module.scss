@@ -1,0 +1,33 @@
+@import "../../../../../../styles/Variables.scss";
+
+.wrapper {
+	width: 100%;
+	& > .buttons {
+		margin-top: 0.25rem;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		border-radius: 1.2rem;
+		overflow: hidden;
+		height: 5rem;
+		background-color: $rasin-quatenary;
+		& > .button {
+			@include size(100%, 100%);
+			@include flex(center, center);
+			font-size: 2rem;
+			color: rgba($ivory, 0.12);
+			transition: 0.2s linear background-color, 0.2s linear color;
+			&:hover {
+				border: 2px solid red;
+			}
+			&[data-active="true"] {
+				background-color: rgba($rasin-tertiary, 0.5);
+				color: rgba($ivory, 1);
+			}
+		}
+	}
+	& > .tiles {
+		@include flex(flex-start, flex-start, column, null, 0.25rem);
+		margin-top: 0.25rem;
+		padding: 1rem 2rem;
+	}
+}

@@ -1,13 +1,12 @@
-@import '../../../../../../../styles/Variables.scss';
-
+@import "../../../../../../../styles/Variables.scss";
 
 @mixin themeButton($theme, $color) {
-	&[data-theme='#{$theme}'] {
+	&[data-theme="#{$theme}"] {
 		border: 2px solid $color;
 		color: $color;
 		transition: 0.15s ease-in-out all;
 
-		&[data-active='true'] {
+		&[data-active="true"] {
 			background-color: $color;
 			color: $rasin-primary;
 			transition: 0.15s ease-in-out all;
@@ -21,8 +20,8 @@
 	padding: 0.65rem 1.2rem;
 	border-radius: 0.45rem;
 
-	@include themeButton('clicks', lime);
-	@include themeButton('views', $views);
-	@include themeButton('ctr', $ctr);
-	@include themeButton('position', $position);
+	@include themeButton("clicks", $clicks);
+	@include themeButton("views", $views);
+	@include themeButton("ctr", $ctr);
+	@include themeButton("position", $position);
 }
