@@ -6,6 +6,7 @@
 	grid-template-columns: repeat(21, 1fr);
 	background-color: $rasin-quinary;
 	position: sticky;
+	background: lime;
 	top: 0;
 	z-index: 999;
 	& > .search {
