@@ -3,6 +3,7 @@ import getGoogleSearchConsoleData from "configs/gsc";
 import getGooglePageSpeedData from "configs/pagespeed";
 import PageSpeedInsights from "components/Views/DashboardView/ClientView/PageSpeedInsights/PageSpeedInsights";
 import styles from "app/(dashboard)/dashboard/client/_style/Client.module.scss";
+import Details from "components/Views/DashboardView/ClientView/Details/Details";
 
 export default async function ClientPage() {
 	const site: string = "https://rad-web.pl";
@@ -31,6 +32,27 @@ export default async function ClientPage() {
 
 	return (
 		<div className={styles.wrapper}>
+			<div className={styles.details}>
+				<Details
+					managment={{
+						cooperation: {
+							start:
+								"Tue Feb 21 2023 15:29:03 GMT+0100 (Central European Standard Time)",
+							end: `Sun Aug 11 2024 03:41:07 GMT+0200 (Central European Summer Time)`,
+						},
+						specialists: [
+							{
+								label: "Klaudia Paluch",
+								uri: "#",
+							},
+							{
+								label: "Radosław Adamczyk",
+								uri: "#",
+							},
+						],
+					}}
+				/>
+			</div>
 			<div className={styles.gsc}>
 				<GoogleSearchConsole
 					pages={gsc.page}

@@ -4,6 +4,9 @@
 	display: grid;
 	grid-template-columns: repeat(27, 1fr);
 	padding: 2rem 3rem;
+	& > .details {
+		grid-column: 1/-1;
+	}
 	& > .gsc {
 		grid-column: 1/20;
 	}
