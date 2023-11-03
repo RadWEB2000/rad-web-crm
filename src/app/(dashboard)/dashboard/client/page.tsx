@@ -4,6 +4,7 @@ import getGooglePageSpeedData from "configs/pagespeed";
 import PageSpeedInsights from "components/Views/DashboardView/ClientView/PageSpeedInsights/PageSpeedInsights";
 import styles from "app/(dashboard)/dashboard/client/_style/Client.module.scss";
 import Details from "components/Views/DashboardView/ClientView/Details/Details";
+import getTechnology from "lib/functions/getTechnology";
 
 export default async function ClientPage() {
 	const site: string = "https://rad-web.pl";
@@ -29,6 +30,8 @@ export default async function ClientPage() {
 			title: psi.desktop.kind,
 		},
 	};
+
+	const data2 = getTechnology("wordpress", "cms");
 
 	return (
 		<div className={styles.wrapper}>
