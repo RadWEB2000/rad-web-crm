@@ -3,8 +3,8 @@ import getGoogleSearchConsoleData from "configs/gsc";
 import getGooglePageSpeedData from "configs/pagespeed";
 import PageSpeedInsights from "components/Views/DashboardView/ClientView/PageSpeedInsights/PageSpeedInsights";
 import styles from "app/(dashboard)/dashboard/client/_style/Client.module.scss";
-import Details from "components/Views/DashboardView/ClientView/Details/Details";
-import getTechnology from "lib/functions/getTechnology";
+import Details from "components/Views/DashboardView/ClientView/Details";
+import { exampleClient } from "data/exampleClient";
 
 export default async function ClientPage() {
 	const site: string = "https://rad-web.pl";
@@ -31,12 +31,14 @@ export default async function ClientPage() {
 		},
 	};
 
-	const data2 = getTechnology("wordpress", "cms");
-
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.details}>
 				<Details
+					domain={{
+						url: site,
+						website: exampleClient,
+					}}
 					managment={{
 						cooperation: {
 							start:

@@ -26,7 +26,7 @@ import { TbBrandSolidjs } from "react-icons/tb";
 import { TfiAndroid, TfiApple, TfiCss3, TfiHtml5 } from "react-icons/tfi";
 
 type tTech = {
-	icon: React.ReactNode;
+	icon: JSX.Element;
 	name: string;
 	value: string;
 };

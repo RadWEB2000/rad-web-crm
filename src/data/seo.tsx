@@ -7,7 +7,7 @@ import {
 } from "react-icons/si";
 
 type tTech = {
-	icon: React.ReactNode;
+	icon: JSX.Element;
 	name: string;
 	value: string;
 };

@@ -12,7 +12,7 @@ import {
 import { TfiJoomla, TfiWordpress } from "react-icons/tfi";
 
 type tTech = {
-	icon: React.ReactNode;
+	icon: JSX.Element;
 	name: string;
 	value: string;
 };
