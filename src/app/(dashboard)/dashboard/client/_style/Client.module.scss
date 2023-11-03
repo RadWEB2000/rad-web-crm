@@ -3,6 +3,7 @@
 .wrapper {
 	display: grid;
 	grid-template-columns: repeat(27, 1fr);
+	background: red;
 	padding: 2rem 3rem;
 	& > .gsc {
 		grid-column: 1/20;
