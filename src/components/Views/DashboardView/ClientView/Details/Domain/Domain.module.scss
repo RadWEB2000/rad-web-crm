@@ -1,0 +1,23 @@
+@import "../../../../../../styles/Variables.scss";
+
+.wrapper {
+	display: grid;
+	grid-template-columns: repeat(21, 1fr);
+	min-height: 40rem;
+	& > .domain {
+		@include flex(flex-start, center, column);
+		grid-column: 1/15;
+		padding: 1rem 1.2rem;
+		& > .site {
+			@include font(11rem, 800, 1.2, null, null, start, $white, null);
+			cursor: default;
+		}
+		& > .services {
+			@include flex(center, flex-start, row wrap, 1rem, 1rem, true);
+		}
+	}
+	& > .technologies {
+		@include flex(flex-start, center, column, null, 1rem);
+		grid-column: 15/-1;
+	}
+}

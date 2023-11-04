@@ -1,0 +1,18 @@
+@import "../../../../../../../styles/Variables.scss";
+
+.wrapper {
+	width: 100%;
+	& > .label {
+		@include font(2.2rem, 700, 1.2, null, null, start, $ivory, null);
+	}
+	& > .items {
+		@include flex(center, flex-start, row wrap, 1.15rem, 1.15rem, true);
+		margin-top: 1.2rem;
+		& > .item {
+			@include flex(center, center);
+			@include size(3.5rem, 3.5rem);
+			color: $slate;
+			font-size: 3.2rem;
+		}
+	}
+}

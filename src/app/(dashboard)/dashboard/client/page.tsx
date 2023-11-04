@@ -31,7 +31,6 @@ export default async function ClientPage() {
 		},
 	};
 
-	console.log(psi);
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.details}>
