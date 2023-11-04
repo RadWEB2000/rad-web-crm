@@ -3,6 +3,7 @@ interface iExampleClient {
 	seo: string[];
 	technologies: string[];
 	services: string[];
+	trackedKeywords: string[];
 }
 
 export const exampleClient: iExampleClient = {
@@ -10,4 +11,5 @@ export const exampleClient: iExampleClient = {
 	seo: ["gsc", "ga", "bing", "gmf"],
 	technologies: ["html", "css", "sass", "javascript", "react", "nextjs", "sql"],
 	services: ["seo", "www", "ppc"],
+	trackedKeywords: ["etag http", "seo poznań", "dokumentacja react"],
 };

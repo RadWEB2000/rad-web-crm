@@ -1,0 +1,55 @@
+@import "../../../../../../styles/Variables.scss";
+.wrapper {
+	grid-column: 12/-1;
+	background-color: $rasin-quinary;
+	border-radius: 1rem;
+	padding: 1.5rem;
+	& > h2 {
+		@include font(2.7rem, 600, 1, null, null, start);
+		padding: 0.3rem;
+	}
+	& > ul {
+		@include flex(flex-start, flex-start, column, null, 0.95rem);
+		padding: 0.45rem;
+		& > li {
+			@include size(3rem, 100%);
+			cursor: pointer;
+			display: grid;
+			grid-template-columns: calc(100% - 3rem) 3rem;
+
+			& > * {
+				color: $slate;
+				transition: 0.11s linear color;
+			}
+
+			&:focus-within,
+			&:hover {
+				& > * {
+					color: $ivory;
+				}
+			}
+			& > p {
+				@include flex(center, flex-start);
+				@include font(2.2rem, 400, 1, null, -0.1rem, start);
+				@include size(100%, 100%);
+				grid-column: 1;
+			}
+			& > button {
+				@include flex(center, center);
+				@include size(3rem, 3rem);
+				font-size: 2.7rem;
+				transition: 0.11s linear color;
+				&:focus-within,
+				&:hover {
+					& > * {
+						color: $red;
+					}
+				}
+			}
+		}
+	}
+}
+
+.modal {
+	display: none;
+}

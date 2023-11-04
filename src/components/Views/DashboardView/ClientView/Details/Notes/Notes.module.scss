@@ -1,0 +1,63 @@
+@import "../../../../../../styles/Variables.scss";
+.wrapper {
+	@include size(clamp(15rem, 35rem, 75rem), 100%);
+	background: lime;
+	grid-column: 1/12;
+	padding: 1rem;
+	border-radius: 1rem;
+	display: grid;
+	grid-template-rows: calc(100% - 5rem) 5rem;
+	background-color: $rasin-quatenary;
+	& > .notes {
+		@include flex(flex-start, flex-start, column, null, 2rem);
+		overflow-y: scroll;
+		padding: 1.5rem;
+		grid-row: 1;
+		&::-webkit-scrollbar {
+			width: 0;
+		}
+		& > .note {
+			@include flex(flex-start, flex-start, column, null, 1rem);
+			border-radius: 1.2rem;
+			background-color: $rasin-tertiary;
+			cursor: default;
+			padding: 1.2rem;
+			width: 100%;
+			& > * {
+				opacity: 0.8;
+				transition: 0.12s linear opacity;
+				width: 100%;
+			}
+			&:focus-within,
+			&:hover {
+				& > * {
+					opacity: 1;
+				}
+			}
+			& > .date,
+			& > .author {
+				& > p {
+					font-weight: 600;
+				}
+			}
+			& > .content {
+				& > p {
+					@include font(
+						1.62rem,
+						400,
+						1.7,
+						null,
+						-1.2px,
+						start,
+						rgba($ivory, 1),
+						null
+					);
+				}
+			}
+		}
+	}
+}
+
+.modal {
+	display: none;
+}

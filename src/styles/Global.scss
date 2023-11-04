@@ -1,5 +1,5 @@
-@import './Variables.scss';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "./Variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
 	box-sizing: border-box;
@@ -13,7 +13,7 @@
 
 ::after,
 ::before {
-	content: '';
+	content: "";
 	position: absolute;
 }
 
@@ -41,7 +41,7 @@ body {
 	background-color: $rasin-tertiary;
 	background-attachment: fixed;
 	color: $ivory;
-	font-family: 'Montserrat', sans-serif;
+	font-family: "Montserrat", sans-serif;
 	font-size: 1.6rem;
 	transition: 0.2s linear all;
 }
@@ -57,6 +57,10 @@ textarea {
 	border: none;
 	font-family: inherit;
 	outline: none;
+}
+input,
+textarea {
+	background: yellow;
 }
 
 li,

@@ -1,0 +1,10 @@
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+	margin-bottom: 7rem;
+	& > .box {
+		display: grid;
+		grid-template-columns: repeat(17, 1fr);
+		gap: 1rem;
+	}
+}

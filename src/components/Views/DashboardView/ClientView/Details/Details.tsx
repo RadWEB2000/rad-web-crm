@@ -1,5 +1,9 @@
 import Managment from "views/DashboardView/ClientView/Details/Managment";
 import Domain from "views/DashboardView/ClientView/Details/Domain";
+import TrackedKeywords from "views/DashboardView/ClientView/Details/TrackedKeywords";
+import { exampleClient } from "data/exampleClient";
+import Notes from "views/DashboardView/ClientView/Details/Notes";
+import styles from "views/DashboardView/ClientView/Details/Details.module.scss";
 
 type tDetails = {
 	domain: {
@@ -29,7 +33,7 @@ export default function Details(props: tDetails) {
 		managment: { cooperation, specialists },
 	} = props;
 	return (
-		<div>
+		<div className={styles.wrapper}>
 			<Managment cooperation={cooperation} specialists={specialists} />
 			<Domain
 				url={url}
@@ -40,6 +44,13 @@ export default function Details(props: tDetails) {
 					technologies: website.technologies,
 				}}
 			/>
+			<div className={styles.box}>
+				<Notes />
+				<TrackedKeywords
+					keywords={exampleClient.trackedKeywords}
+					title="Śledzone słowa kluczowe"
+				/>
+			</div>
 		</div>
 	);
 }
