@@ -1,4 +1,4 @@
-@import "../../../../../../styles/Variables.scss";
+@import '../../../../../../styles/Variables.scss';
 
 .wrapper {
 	display: grid;
@@ -9,7 +9,7 @@
 		grid-column: 1/15;
 		padding: 1rem 1.2rem;
 		& > .site {
-			@include font(11rem, 800, 1.2, null, null, start, $white, null);
+			@include font(6rem, 800, 1.2, null, null, start, $white, null);
 			cursor: default;
 		}
 		& > .services {
